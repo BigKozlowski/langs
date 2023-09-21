@@ -1,0 +1,16 @@
+{
+  "name": "jsparser",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "bun index.ts",
+    "start:dev": "bun --watch index.ts",
+    "test": "bun __tests__/run.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.6.2"
+  }
+}
