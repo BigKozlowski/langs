@@ -1,4 +1,5 @@
-const Spec: [RegExp, string][] = [
+const Spec: [RegExp, string | null][] = [
+    [/^\s+/, null],
     [/^\d+/, "NUMBER"],
     [/^"[^"]*"/, "STRING"],
     [/^'[^']*'/, "STRING"]
@@ -32,6 +33,11 @@ export class Tokenizer {
 
             if(tokenValue === null){
                 continue;
+            }
+
+            if(tokenType === null) {
+                this._cursor+= tokenValue.length;
+                return this.getNextToken();
             }
 
             return {
