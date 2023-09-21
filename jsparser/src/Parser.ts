@@ -1,9 +1,5 @@
 import { Tokenizer } from "./Tokenizer";
 
-interface IParser {
-    _tokenizer: Tokenizer,
-}
-
 export class Parser {
     _string: string | null = null;
     _tokenizer: Tokenizer | null = null;
