@@ -12,5 +12,8 @@
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^20.6.2"
+  },
+  "dependencies": {
+    "assert": "^2.1.0"
   }
 }

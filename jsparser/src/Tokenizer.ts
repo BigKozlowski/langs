@@ -1,6 +1,15 @@
 const Spec: [RegExp, string | null][] = [
+    // Whitespace:
     [/^\s+/, null],
+
+    // Comments:
+    [/^\/\/.*/, null],
+    [/^\/\*[\s\S]*?\*\//, null],
+
+    // Numbers:
     [/^\d+/, "NUMBER"],
+
+    // Strings: 
     [/^"[^"]*"/, "STRING"],
     [/^'[^']*'/, "STRING"]
 ]
