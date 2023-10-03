@@ -1,5 +1,5 @@
 const testLiteral = (test: (arg0: string, arg1: { type: string; body: { type: string; value: number; } | { type: string; value: string; } | { type: string; value: string; }; }) => void) => {
-    test('42', {
+    test("42", {
         type: "Program",
         body: {
             type: "NumericLiteral",
@@ -7,19 +7,19 @@ const testLiteral = (test: (arg0: string, arg1: { type: string; body: { type: st
         },
     });
 
-    test('"hello"', {
+    test("\"hello\"", {
         type: "Program",
         body: {
             type: "StringLiteral",
-            value: 'hello',
+            value: "hello",
         },
     });
 
-    test(`'hello'`, {
+    test("'hello'", {
         type: "Program",
         body: {
             type: "StringLiteral",
-            value: 'hello',
+            value: "hello",
         },
     });
 };

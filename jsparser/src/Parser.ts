@@ -26,7 +26,7 @@ export class Parser {
         return {
             type: "Program",
             body: this.Literal(),
-        }
+        };
     }
 
     Literal() {
@@ -34,28 +34,28 @@ export class Parser {
             throw new Error("lookahead is not initialized");
         }
         switch (this._lookahead.type) {
-            case 'NUMBER': 
-                return this.NumericLiteral();
-            case 'STRING': 
-                return this.StringLiteral();
+        case "NUMBER": 
+            return this.NumericLiteral();
+        case "STRING": 
+            return this.StringLiteral();
         }
-        throw new SyntaxError(`Literal: unexpected literal production`);
+        throw new SyntaxError("Literal: unexpected literal production");
     }
 
     StringLiteral() {
-        const token = this._eat('STRING');
+        const token = this._eat("STRING");
         return {
-            type: 'StringLiteral',
+            type: "StringLiteral",
             value: token.value.slice(1, -1),
-        }
+        };
     }
 
     NumericLiteral() {
-        const token = this._eat('NUMBER')
+        const token = this._eat("NUMBER");
         return {
-            type: 'NumericLiteral',
+            type: "NumericLiteral",
             value: Number(token.value)
-        }
+        };
     }
 
     _eat(tokenType: string): astNode {
@@ -68,7 +68,7 @@ export class Parser {
         const token = this._lookahead;
 
         if(token === null) {
-            throw new SyntaxError(`Unexpected end of input, expected: "${tokenType}"`)
+            throw new SyntaxError(`Unexpected end of input, expected: "${tokenType}"`);
         }
 
         if(token.type !== tokenType){

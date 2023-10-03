@@ -12,7 +12,7 @@ const Spec: [RegExp, string | null][] = [
     // Strings: 
     [/^"[^"]*"/, "STRING"],
     [/^'[^']*'/, "STRING"]
-]
+];
 
 export class Tokenizer {
     _string = "";
@@ -52,7 +52,7 @@ export class Tokenizer {
             return {
                 type: tokenType,
                 value: tokenValue
-            }
+            };
         }
 
         return null;
